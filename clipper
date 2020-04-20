@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+names=()
+values=()
+i=0
+while read line; do
+n="$(cut -d'=' -f1 <<<"$line")"
+v="$(cut -d'=' -f2 <<<"$line")"
+echo "$i ${n}"
+names[$i]="$n"
+values[$i]="${v}"
+i=$(($i+1))
+done<$1
+
+while true;do
+echo -n "Enter a snippet: "
+read c
+
+if [[ -z $c ]];then
+i=0
+for n in ${names[@]};do
+echo "$i ${n}"
+i=$(($i+1))
+done
+elif [[ $c == 'q' ]];then exit 0
+fi
+
+echo -n "${values[$c]}"  | xsel -i -b 
+done

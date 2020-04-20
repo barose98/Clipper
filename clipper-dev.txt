@@ -1,0 +1,9 @@
+cpp-this = this->
+c-inc = #include 
+cpp-std = std::
+cpp-std-string = std::string
+cpp-std-move = std::move(  )
+cpp-UP = std::unique_ptr<  >
+cpp-mUP = std::make_unique< >(
+cpp-out = std::cout <<    <<std::endl;
+cpp-space = << "  "   <<        
