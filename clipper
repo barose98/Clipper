@@ -16,12 +16,7 @@ echo -n "Enter a snippet: "
 read c
 
 if [[ -z $c ]];then
-i=0
-for n in ${names[@]};do
-echo "$i ${n}"
-i=$(($i+1))
-done
-elif [[ $c == 'q' ]];then exit 0
+exit 0;
 fi
 
 echo -n "${values[$c]}"  | xsel -i -b 
