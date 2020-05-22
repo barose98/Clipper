@@ -11,7 +11,7 @@ values[$i]="${v}"
 i=$(($i+1))
 done<$1
 
-while true;do
+#while true;do
 echo -n "Enter a snippet: "
 read c
 
@@ -20,4 +20,4 @@ exit 0;
 fi
 
 echo -n "${values[$c]}"  | xsel -i -b 
-done
+#done
